@@ -1,0 +1,62 @@
+/* TO BE CHANGED TO SASS MODULES FOR EASIER HANDLING */
+
+.menu__link {
+    color: #000 !important;
+}
+
+html[data-theme='dark'] .menu__link  {
+    color: #fff !important;
+}
+
+.menu__link--sublist:after {
+    background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+}
+.theme-doc-sidebar-item-link-level-1,
+.theme-doc-sidebar-item-category-level-1 > div > a {
+    text-transform: none;
+    font-weight: 500;
+}
+
+ul:not(.theme-doc-sidebar-item-link-level-1) {
+    text-transform: none;
+    font-weight: 400;
+}
+
+.theme-doc-sidebar-item-link-level-2 {
+    text-transform: none;
+    font-weight: normal;
+}
+
+.menu__link--sublist:after,
+.menu__caret:before {
+    background: transparent;
+    background-image: url('../../static/img/chevron-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateZ(90deg);
+    transition-duration: .2s;
+}
+
+html[data-theme='dark'] .menu__link--sublist:after,
+.menu__caret:before  {
+        background-image: url('../../static/img/chevron-right.svg');
+}
+.menu__list-item--collapsed .menu__link--sublist:after,
+.menu__list-item--collapsed .menu__caret:before {
+    transform: rotateZ(0deg);
+}
+
+.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-3.menu__list-item, .theme-doc-sidebar-item-category-level-2 {
+    text-transform: none;
+}
+
+.menu__list-item,
+.menu__list-item:not(:first-child) {
+    margin-top: 10px;
+}
+
+aside.theme-doc-sidebar-container {
+    clip-path: inset(0 -340px);
+    position: relative;
+    cursor: auto;
+}
