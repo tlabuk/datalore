@@ -24,7 +24,22 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        // Initial config, to be changed, styles to be reafctored
+        indexDocs: true,
+        indexBlog: true,
+        hashed: true,
+        docsRouteBasePath: "/",
+        searchBarShortcut: true,
+        searchBarPosition: "right",
+      },
+    ],
+  ],
   presets: [
     [
       "classic",
@@ -44,7 +59,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "My Site",
+      title: "Datalore task",
       logo: {
         alt: "My Site Logo",
         src: "img/datalore-logo.svg",
@@ -90,6 +105,13 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} this.cursive Built with Docusaurus.`,
+    },
+    themeConfig: {
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
     },
     prism: {
       theme: prismThemes.github,
