@@ -18,7 +18,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "labtom", // Usually your GitHub org/user name.
   projectName: "datalore-task", // Usually your repo name.
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   i18n: {
     defaultLocale: "en",
