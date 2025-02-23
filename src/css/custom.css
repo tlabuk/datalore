@@ -4,7 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2f7eff;
   --ifm-color-primary-dark: #116bff;
@@ -13,9 +12,10 @@
   --ifm-color-primary-light: #4d91ff;
   --ifm-color-primary-lighter: #5c9aff;
   --ifm-color-primary-lightest: #8ab6ff;
+  --ifm-color-info-contrast-background: rgba(217, 217, 217, 0.693) !important;
+  --ifm-color-info-dark: #9f9f9f;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #5d99fa;
   --ifm-color-primary-dark: #116bff;
@@ -24,6 +24,8 @@
   --ifm-color-primary-light: #4d91ff;
   --ifm-color-primary-lighter: #5c9aff;
   --ifm-color-primary-lightest: #8ab6ff;
+  --ifm-color-info-contrast-background: #28282b !important;
+  --ifm-color-info-dark: #1e1e20;
 }
 
 @import './sidebar.css'
