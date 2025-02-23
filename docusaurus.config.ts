@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { FaLinkedin } from "react-icons/fa";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -64,47 +65,42 @@ const config: Config = {
         alt: "My Site Logo",
         src: "img/datalore-logo.svg",
       },
-      items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
-        },
-      ],
     },
     footer: {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Other resources",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/tomasz-labuk/",
+            },
+            {
+              label: "Academia",
+              href: "https://independent.academia.edu/TomaszLabuk",
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/tlabuk",
             },
           ],
         },
         {
-          title: "More",
+          title: "Other resources",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "Ph.D. thesis",
+              href: "https://opus.us.edu.pl/info/phd/USLe9b9fbcfe5a44450af007b14af391dcf/",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              label: "The Codex",
+              href: "https://www.davincilabs.eu/downloads/The_Codex_Q2_2021.pdf",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} this.cursive Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} this.cursive | labtom.`,
     },
     themeConfig: {
       colorMode: {

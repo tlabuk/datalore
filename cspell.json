@@ -1,0 +1,25 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": ["**/*.md", "**/*.mdx"],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    ".github/**",
+    ".vscode/**"
+  ],
+  "words": ["Datalore"],
+  "ignoreWords": ["cooldown"],
+  "dictionaries": ["typescript", "node", "softwareTerms", "filetypes"],
+  "overrides": [
+    {
+      "filename": "**/*.md",
+      "words": ["Markdown", "API", "CLI"]
+    },
+    {
+      "filename": "**/*.mdx",
+      "words": ["JSX", "React", "props"]
+    }
+  ]
+}
