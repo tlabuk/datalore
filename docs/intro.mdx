@@ -2,5 +2,41 @@
 sidebar_position: 1
 slug: /
 ---
+import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate'
 
 # General information
+
+Welcome to my solution of the Datalore documentation tasks!
+
+In this documnt you can find my feedback on the current state of the documentation and a list of proposed changes, so you can easily pinpoint them in each solution document.
+
+## What to expect?
+
+The tasks are split by folders you can see in the main sidebar, each containing a solution document. Here's a quick overview of the tasks:
+    - [Task 1–On-premise installation](/task-1/task-1)
+    - [Task 2–Update documentation for the Viewer user-type](/task-2/task-2)
+    - [Task 3–DuckDB](/task-3/task-3)
+
+:::note
+You'll notice that I've completely overhauled the documentation for **on-premises installation** and **managing users**.
+
+Some updates are subtle and minor (such as formatting, elisions, wording, improved heading structure). Others were more substantial: wherever that's the case, I've added <MajorUpdate/> badges to the relevant sections for easy reference.
+
+You can also check the relevant chagelog sections in this document for the recap of changes for each documentation set.
+:::
+
+## Overview and rationale for changes
+
+### Task 1–On-premises installation
+
+{/* My notes:
+- Broken links
+- Some of the links lack target=_blank attribute (not the best practice)
+- Frames: overkill, comparison table: bad formatting
+- The instructions themselves are okay but if and only if you're quite familiar with Docker or Kubernetes:
+    - There's a lot of jargon and not enough explanation (greenfield deployments, etc.)
+    - The documentation skips some of the basic steps. For example: they start away directly with composing the yml file, but they don't tell the exact command how to do it. This should be much clearer
+    - The instruction also already presuppose you've prepared your deployment instance like EC2. They don't mention that you can check your deployment locally and see how it works. Again, it's basic stuff, but my experience shows that it's best to have these instructions. I've been recently asked by a junior DevOps engineer about adding pagination instructions (you can see them here: https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) which seemed like a very basic stuff for an api user, but it's better to have it than not to have it.
+- Kubernetes!
+- General note is that there's not enough lower-level headings. It's hard to navigate through the doc. Solution: add more headings and subheadings so the ToC is generated (see my docs)
+ */}

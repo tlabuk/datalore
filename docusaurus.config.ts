@@ -48,6 +48,7 @@ const config: Config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
+          editUrl: "https://github.com/tlabuk/datalore/tree/main/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -65,6 +66,23 @@ const config: Config = {
         alt: "My Site Logo",
         src: "img/datalore-logo.svg",
       },
+      items: [
+        {
+          to: "/about/bio",
+          label: "About me",
+          position: "left",
+        },
+        {
+          href: "https://github.com/tlabuk/datalore",
+          className: "header-github-link",
+          position: "right",
+        },
+        {
+          to: "/this-cursive-page/docs/odyssey-game",
+          label: "The Odyssey game",
+          position: "left",
+        },
+      ],
     },
     footer: {
       style: "dark",

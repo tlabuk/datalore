@@ -60,3 +60,14 @@ aside.theme-doc-sidebar-container {
     position: relative;
     cursor: auto;
 }
+
+.header-github-link::before {
+    content: url('../../static/img/github.svg');
+    margin-right: 0.5rem;
+    position: relative;
+    top: 4px
+}
+
+html[data-theme='dark'] .header-github-link::before {
+    content: url('../../static/img/github-dark.svg');
+}
