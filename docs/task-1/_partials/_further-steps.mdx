@@ -1,0 +1,29 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Configure Datalore
+
+The following overview lists the required and optional configuration procedures you can perform after installing Datalore on-premises.
+
+<Tabs groupId="configuration-procedures" queryString className="custom-tabs">
+    <TabItem value="required" label="Required">
+
+    | Procedure                                                                                                                                                                                    | Description                                                            |
+    | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+    | Configure agents ([Docker](https://www.jetbrains.com/help/datalore/configure-docker-agents.html) \| [Helm](https://www.jetbrains.com/help/datalore/configure-agents-helm-installation.html)) | Customize how your agents work to manage your computational resources. |
+    | Set up GPU machines ([Docker](https://www.jetbrains.com/help/datalore/set-up-gpu-machines.html) \| [Helm](https://www.jetbrains.com/help/datalore/set-up-gpu-machines-k8s.html))             | Activate GPU machines.                                                 |
+    | Configure plans ([Docker](https://www.jetbrains.com/help/datalore/configure-plans-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/configure-plans-helm-installation.html))    | Customize resource usage among your Datalore users.                    |
+
+    </TabItem>
+    <TabItem value="optional" label="Optional">
+
+    | Procedure                                                                                                                                                                                                                                     | Description                                                           |
+    | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+    | [Customize or update environment](https://www.jetbrains.com/help/datalore/customize-or-update-environment.html)                                                                                                                               | Used to create multiple base environments out of custom Docker images |
+    | Set up JetBrains Hub ([Docker](https://www.jetbrains.com/help/datalore/use-hub-for-docker-installation.html) \| [Helm](https://www.jetbrains.com/help/datalore/use-hub-for-helm-installation.html))                                             | Used to integrate an authentication service                           |
+    | Enable gift codes ([Docker](https://www.jetbrains.com/help/datalore/enable-gift-codes-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-gift-codes-helm-installation.html))                                               | Used to enable a service generating and distributing gift codes       |
+    | Enable email service ([Docker](https://www.jetbrains.com/help/datalore/enable-email-service-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-email-service-helm-installation.html))                                      | Used to activate email notifications                                  |
+    | Enable user activity logging ([Docker](https://www.jetbrains.com/help/datalore/enable-user-activity-logging-docker-installation.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-user-activity-logging-helm-installation.html)) | Used to track user activity                                           |
+
+    </TabItem>
+</Tabs>

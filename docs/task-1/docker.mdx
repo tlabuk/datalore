@@ -2,6 +2,208 @@
 id: docker
 title: Docker-based installation
 sidebar_position: 1
+tags:
+    - Installation
+    - Deployment
+    - Docker
+    - On-premises
+keywords:
+  - Datalore installation
+  - Datalore deployment
+  - install Datalore
+  - installation procedures
+  - installation requirements
+  - Docker deployment
 ---
+import MajorUpdates from '/src/components/MajorUpdate/MajorUpdate';
+import Zoom from '/src/components/Zoom/ZoomImg';
+import FurtherSteps from './_partials/_further-steps.mdx';
 
 # Docker-based installation
+
+This document details the process of installing, configuring, and updating Datalore on-premises using the Docker Compose method.
+
+If your primary objective is to quickly familiarize yourself with the product and its core features, we recommend opting for the Docker-based installation. This approach offers a simpler and faster setup compared to the Helm-based method.
+
+:::tip recommended deployment platform
+If you haven’t yet selected a platform or service, we recommend trying Datalore On-Premises on an AWS EC2 instance.
+
+For step-by-step instructions on setting up your AWS infrastructure, check [this guide](https://community.aws/content/2duq9xSYespeSBQ5R1WiuOcCvMj/using-ec2-userdata-to-bootstrap-python-web-app).
+:::
+
+## What to expect <MajorUpdates/>
+
+In this document you'll find detailed instructions and references about the following steps:
+- [Basic installation](https://www.jetbrains.com/help/datalore/install-datalore-on-premises-using-docker.html#basic-datalore-installation_docker): Complete the basic procedure to get Datalore On-Premises up and running on the infrastructure of your choice.
+- [Required and optional configuration procedures](https://www.jetbrains.com/help/datalore/configuration-procedures-docker.html): Customize and configure Datalore on-premises. Some of these configurations are essential for you to start working on your projects.
+- [Upgrade procedure](https://www.jetbrains.com/help/datalore/upgrade-datalore-on-premises-docker-installation.html): Upgrade your version of Datalore On-Premises. We duly notify you of our new releases.
+
+## Prerequisites <MajorUpdates/>
+
+### Docker and Docker Compose
+
+To proceed with Docker deployment, make sure you have the following in place:
+
+- Docker
+- Docker Compose V2
+
+You can check the requirements by running the docker `compose version command` in your terminal. If you see the following output, you're good to go:
+
+```text
+$ docker compose version
+
+Docker Compose version v2.31.0-desktop.2
+```
+
+If you need to install Docker, check [Docker documentation](https://docs.docker.com/desktop/) for instructions. On **Windows** and **Mac**, Docker Compose is bundled with Docker Desktop. If you're using **Linux**, you'll need to install Docker Compose separately.
+
+:::tip
+If you use a reverse proxy, we recommend activating gzip compression by following [these instructions](https://nginx.org/en/docs/http/ngx_http_gzip_module.html).
+:::
+
+### Hardware requirements <MajorUpdates/>
+
+We recommend the following hardware set-up for running Datalore on-premises:
+- **Datalore server machine**: `≥4GB RAM`. If you're not expecting a heavy workload, the number of CPUs isn’t as crucial a factor
+- **For every concurrently run notebook**: `≥4GB RAM`
+
+## Installation steps <MajorUpdates/>
+
+:::danger important
+When customizing the deployment, make sure you don’t change the user for the datalore-server container.
+
+The container runs using the default user defined in the Docker image. Changing or adding a user property might lead to unexpected issues with the deployment.
+:::
+
+### Install Datalore <MajorUpdates/>
+
+1. Download the `docker-compose.yaml` from the [Datalore configs](https://github.com/JetBrains/datalore-configs/tree/2025.1/docker-compose) repository.
+
+2. Change `datalore.environment.DB_PASSWORD` and `postgresql.environment.POSTGRES_PASSWORD` with any random string (both properties must have the same values). They'll be used as your database password. Make sure you keep those strings secret.
+
+3. Go to your terminal and:
+    -  Move to the directory where you saved the `docker-compose.yaml` file:
+
+        ```bash
+        cd /path/to/docker-compose.yaml
+        ```
+    - Run the following command to start Datalore:
+
+        ```bash
+        docker compose up -d
+        ```
+4. In your browser, go to `http://localhost:8080` to access Datalore. Sign up as the first user to get **Super Admin** permissions.
+
+    <Zoom src='/datalore/img/deploy/docker/docker-1.png' alt='Datalore sign-up page' />
+
+    :::tip
+    If you haven't set up email service, you won’t receive a confirmation email. You can log in immediately after signing up.
+    :::
+
+5. To access Datalore by a domain other than `localhost`, add a URL with this host as the `DATALORE_PUBLIC_URL` parameter in the docker-compose.yaml file.<br/><br/>For example, if you want to use the https://datalore.yourcompany.com domain, add the following value to the `datalore.environment` section:
+
+    ```yaml title='Add custom URL to Docker config'
+    services:
+        datalore:
+            ...
+            environment:
+                ...
+                DATALORE_PUBLIC_URL: "https://datalore.yourcompany.com"
+    ```
+    :::caution
+    Make sure the URL doesn't contain trailing slash. You'll need to configure your DNS yourself.
+    :::
+
+6. Click your avatar in the upper right corner, select Admin panel:
+
+    <Zoom src='/datalore/img/deploy/docker/docker-2.png' alt='Datalore admin panel' />
+
+
+7. In the admin panel menu on the left, choose *License* and provide your license key:
+
+    <Zoom src='/datalore/img/deploy/docker/docker-3.png' alt='Datalore license details' />
+
+## Optional steps
+
+### Use an external Postgres database <MajorUpdates/>
+
+If you want to use an external Postgres database, follow these steps:
+
+1. Add the following variables under the `environment` in your `docker-compose.yaml` file:
+
+    ```yaml
+    datalore:
+        environment:
+            ...
+            DB_USER: "<database_user>"
+            DB_URL: "jdbc:postgresql://[database_host]:[database_port]/[database_name]"
+    ```
+    :::caution
+    Make sure the `datalore.environment.DB_PASSWORD` value is your user's password to the  database you're using.
+    :::
+
+2. In the same file, remove the following block:
+
+    ```yaml
+    postgresql:
+        image: jetbrains/datalore-postgres:2024.4
+        expose: [ "5432" ]
+        networks:
+        - datalore-backend-network
+        volumes:
+        - "postgresql-data:/var/lib/postgresql/data"
+        environment:
+            POSTGRES_PASSWORD: "changeme"
+    ```
+
+3. Remove `volumes.postgresql-data: { }` line from your `docker-compose.yaml` file.
+
+
+### Activate an email whitelist
+
+You can also activate a whitelist for new user registration. Only users with emails entered to the whitelist can be registered to your Datalore instance.
+
+1. Open your `docker-compose.yaml` file.
+
+2. Add the following parameter and then run `docker compose up -d` command:
+
+    ```yaml
+    datalore:
+        environment:
+            EMAIL_ALLOWLIST_ENABLED: "true"
+    ```
+
+3. The Email allowlist tab will now be available in your Admin panel:
+
+    <Zoom src='/datalore/img/deploy/docker/docker-4.png' alt='Datalore email allowlist' />
+
+
+### Activate user filtration based on Hub group membership
+
+By default, all Hub users can get registеred unless you disable registration on the Admin panel. If you want to grant Datalore access only to a specific Hub group members, follow the steps below:
+
+1. Open your `docker-compose.yaml` file.
+
+2. Add the following parameter:
+
+    ```yaml
+    datalore:
+        environment:
+            HUB_ALLOWLIST_GROUP: 'group_name' # Change 'group_name' to the name of the group you want to allow access to Datalore
+    ```
+
+### Configure notebook code import
+
+Set your own value in bytes to configure the limit of notebook code import.
+
+1. Open the docker-compose.yaml file.
+
+2. Add the following parameter:
+
+    ```yaml
+    datalore:
+        environment:
+            VFS_MAX_IMPORT_SOURCE_LENGTH: 'integer, prefixes (K-, M-, etc.) not supported'
+    ```
+
+<FurtherSteps />

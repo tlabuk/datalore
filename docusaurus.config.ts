@@ -49,6 +49,10 @@ const config: Config = {
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/tlabuk/datalore/tree/main/",
+          admonitions: {
+            keywords: ["troubleshooting"],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: "./src/css/custom.css",
