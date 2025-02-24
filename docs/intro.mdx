@@ -13,9 +13,9 @@ In this document you can find my feedback on the current state of the documentat
 ## What to expect?
 
 The tasks are split by folders you can see in the main sidebar, each containing a solution document. Here's a quick overview of the tasks:
-    - [Task 1–On-premise installation](/task-1/task-1)
-    - [Task 2–Update documentation for the Viewer user-type](/task-2/task-2)
-    - [Task 3–DuckDB](/task-3/task-3)
+    - [Task 1–On-premise installation](/datalore/task-1)
+    - [Task 2–Update documentation for the Viewer user-type](/datalore/task-2)
+    - [Task 3–DuckDB](/datalore/task-3)
 
 :::info
 You'll notice that I've completely overhauled the existing Datalore's documentation for **on-premises installation** and **managing users**.
@@ -37,6 +37,13 @@ You can also check the relevant changelog sections in this document for the reca
     - There's a lot of jargon and not enough explanation (greenfield deployments, etc.)
     - The documentation skips some of the basic steps. For example: they start away directly with composing the yml file, but they don't tell the exact command how to do it. This should be much clearer
     - The instruction also already presuppose you've prepared your deployment instance like EC2. They don't mention that you can check your deployment locally and see how it works. Again, it's basic stuff, but my experience shows that it's best to have these instructions. I've been recently asked by a junior DevOps engineer about adding pagination instructions (you can see them here: https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) which seemed like a very basic stuff for an api user, but it's better to have it than not to have it.
+- Refactor headings, renamed "basic installation" to "install datalore" - it seemed confusing after the section that go in-depth with the installation process, why basic? Directive heading are clearer
 - Kubernetes!
+- Chunky wording refactored to be more user friendly
+- "We" changed to "Datalore" - best practice in tech writing communication
+- incorrect info - after installing first user has super-admin rights, not admin
 - General note is that there's not enough lower-level headings. It's hard to navigate through the doc. Solution: add more headings and subheadings so the ToC is generated (see my docs)
+
+ REMEMBER ABOUT MICROCOPY FEEDBACK, CHECK SCREENSHOTS
  */}
+

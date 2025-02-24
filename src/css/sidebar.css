@@ -71,3 +71,16 @@ aside.theme-doc-sidebar-container {
 html[data-theme='dark'] .header-github-link::before {
     content: url('../../static/img/github-dark.svg');
 }
+
+.custom-tabs .tabs__item--active {
+    color: #fff;
+    border-radius: var(--ifm-global-radius);
+    background-color: var(--custom-tabs-active-bg-color);
+    border: 0;
+}
+
+.custom-tabs .tabs__item {
+    margin-right: 8px;
+    line-height: 16px;
+    font-weight: bold;
+}

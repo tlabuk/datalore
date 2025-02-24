@@ -1,13 +1,95 @@
 ---
 id: on-prem
 title: Task 1–Install Datalore on-premises
-draft: true
 ---
+import DeploymentTable from '/src/components/DeploymentTable/DeploymentTable';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate';
+
+# On-premises installation
+
+This page provides an overview of the Datalore on-premises installation methods. While you can go straight to the detailed installation topics, we recommend reviewing this overview to gain a complete understanding of the entire process.
+
+## Installation process overview
+
+:::note
+Normally, a new Datalore deployment takes about an hour, as long as there aren't any unexpected infrastructure problems.
+:::
+
+The installation process includes the following steps:
+
+- [Setting up infrastructure & choosing an installation method](#setting-up-infrastructure--choosing-an-installation-method)
+
+- [Install datalore](#install-datalore)
+
+- [Required and optional configuration procedures](#required-and-optional-configuration-procedures)
+
+- [Upgrading Datalore](#upgrading-datalore)
+
+## On-premises installation & configuration
+
+### Set up infrastructure & choose an installation method <MajorUpdate/>
+
+:::caution
+Currently, Datalore supports only 64-bit Linux as a host system. **ARM-based platforms, macOS, and Windows are not supported at this time.**
+:::
+
+Before installing Datalore on-premises, set up the platform where you'll deploy it. Once your platform is ready, choose the [installation method](#install-datalore) that suits your needs.
+
+Check the table below to review your infrastructure options and compare installation methods.
+
+<DeploymentTable/>
+
+### Install Datalore
+
+Once you chose infrastructure, follow the installation procedure to launch Datalore on-premises. Check one of the guides below based on your selected method:
+
+- [Docker-based installation](/datalore/task-1/docker)
+- [Kubernetes-based installation](/datalore/task-1/kubernetes)
+
+Once installation process is complete, Datalore on-premises will be ready for use, and your first signed-up user will have super admin rights.
+
+### Configure Datalore
+
+The following overview lists the required and optional configuration procedures you can perform after installing Datalore on-premises.
+
+<Tabs groupId="configuration-procedures" queryString className="custom-tabs">
+    <TabItem value="required" label="Required">
+
+    | Procedure                                                                                                                                                                                    | Description                                                            |
+    | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+    | Configure agents ([Docker](https://www.jetbrains.com/help/datalore/configure-docker-agents.html) \| [Helm](https://www.jetbrains.com/help/datalore/configure-agents-helm-installation.html)) | Customize how your agents work to manage your computational resources. |
+    | Set up GPU machines ([Docker](https://www.jetbrains.com/help/datalore/set-up-gpu-machines.html) \| [Helm](https://www.jetbrains.com/help/datalore/set-up-gpu-machines-k8s.html))             | Activate GPU machines.                                                 |
+    | Configure plans ([Docker](https://www.jetbrains.com/help/datalore/configure-plans-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/configure-plans-helm-installation.html))    | Customize resource usage among your Datalore users.                    |
+
+    </TabItem>
+    <TabItem value="optional" label="Optional">
+
+    | Procedure                                                                                                                                                                                                                                     | Description                                                           |
+    | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+    | [Customize or update environment](https://www.jetbrains.com/help/datalore/customize-or-update-environment.html)                                                                                                                               | Used to create multiple base environments out of custom Docker images |
+    | Set up JetBrains Hub ([Docker](https://www.jetbrains.com/help/datalore/use-hub-for-docker-installation.html) \| [Helm](https://www.jetbrains.com/help/datalore/use-hub-for-helm-installation.html))                                             | Used to integrate an authentication service                           |
+    | Enable gift codes ([Docker](https://www.jetbrains.com/help/datalore/enable-gift-codes-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-gift-codes-helm-installation.html))                                               | Used to enable a service generating and distributing gift codes       |
+    | Enable email service ([Docker](https://www.jetbrains.com/help/datalore/enable-email-service-docker.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-email-service-helm-installation.html))                                      | Used to activate email notifications                                  |
+    | Enable user activity logging ([Docker](https://www.jetbrains.com/help/datalore/enable-user-activity-logging-docker-installation.html) \| [Helm](https://www.jetbrains.com/help/datalore/enable-user-activity-logging-helm-installation.html)) | Used to track user activity                                           |
+
+    </TabItem>
+</Tabs>
+
+
+### Upgrade Datalore
+
+Each installation method has its own upgrade procedure. Check the guides below to upgrade Datalore on-premises:
+
+- Upgrade Datalore with [Docker](https://www.jetbrains.com/help/datalore/upgrade-datalore-on-premises-docker-installation.html)
+- Upgrade Datalore with [Kubernetes](https://www.jetbrains.com/help/datalore/upgrade-datalore-on-premises-helm-installation.html)
+
+:::note
+We’ll notify you as soon as a new version is released, so you can upgrade without delay. In general, Docker installations update faster and more easily than Kubernetes ones.
+:::
 
 
 
 
-| **Type** | **Description** | **Capabilities / Roles** |
-|---|---|---|
-| **Viewer** | A **view-only** user type who can only access notebooks and reports shared with them. Viewers can't create new notebooks or publish reports. | **Capabilities:**<br/>- Can view shared notebooks and reports<br/>- Can't create, clone, or share notebooks or reports<br/>- Can't share edit rights<br/>- Can't join groups with regular users<br/>- Have the same file system as regular users |
-| **User** | A user who can fully use the functionality of Datalore. Specific privileges vary based on the assigned role (check the Capabilities/Roles column on the right) | **The following user roles are available**:<br/>- **Regular:** A regular user who can create notebooks, workspaces and reports but has no admin rights<br/>- **Admin**: An admin user with access to the Admin panel<br/>- **Super Admin:** an admin user who can also change other users' roles via the Admin panel. First user registered with Datalore is automatically a super admin. |
+
