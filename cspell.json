@@ -10,7 +10,7 @@
     ".vscode/**"
   ],
   "words": ["Datalore"],
-  "ignoreWords": ["cooldown"],
+  "ignoreWords": ["cooldown", "jdbc", "changeme"],
   "dictionaries": ["typescript", "node", "softwareTerms", "filetypes"],
   "overrides": [
     {

@@ -100,7 +100,7 @@ The container runs using the default user defined in the Docker image. Changing 
     If you haven't set up email service, you won’t receive a confirmation email. You can log in immediately after signing up.
     :::
 
-5. To access Datalore by a domain other than `localhost`, add a URL with this host as the `DATALORE_PUBLIC_URL` parameter in the docker-compose.yaml file.<br/><br/>For example, if you want to use the https://datalore.yourcompany.com domain, add the following value to the `datalore.environment` section:
+5. To access Datalore by a domain other than `localhost`, add a URL with this host as the `DATALORE_PUBLIC_URL` parameter in the `docker-compose.yaml` file.<br/><br/>For example, if you want to use the https://datalore.yourcompany.com domain, add the following value to the `datalore.environment` section:
 
     ```yaml title='Add custom URL to Docker config'
     services:
@@ -196,7 +196,7 @@ By default, all Hub users can register unless you deactivate registration on the
 
 Set your own value in bytes to configure the limit of notebook code import.
 
-1. Open the docker-compose.yaml file.
+1. Open the `docker-compose.yaml` file.
 
 2. Add the following parameter:
 
