@@ -10,7 +10,14 @@
     ".vscode/**"
   ],
   "words": ["Datalore"],
-  "ignoreWords": ["cooldown", "jdbc", "changeme", "dataframe", "Nobl9"],
+  "ignoreWords": [
+    "cooldown",
+    "jdbc",
+    "changeme",
+    "dataframe",
+    "Nobl9",
+    "unban"
+  ],
   "dictionaries": ["typescript", "node", "softwareTerms", "filetypes"],
   "overrides": [
     {
