@@ -29,21 +29,50 @@ You can also check the relevant changelog sections in this document for the reca
 
 ### Task 1–On-premises installation
 
-{/* My notes:
-- Broken links
-- Some of the links lack target=_blank attribute (not the best practice)
-- Frames: overkill, comparison table: bad formatting
-- The instructions themselves are okay but if and only if you're quite familiar with Docker or Kubernetes:
-    - There's a lot of jargon and not enough explanation (greenfield deployments, etc.)
-    - The documentation skips some of the basic steps. For example: they start away directly with composing the yml file, but they don't tell the exact command how to do it. This should be much clearer
-    - The instruction also already presuppose you've prepared your deployment instance like EC2. They don't mention that you can check your deployment locally and see how it works. Again, it's basic stuff, but my experience shows that it's best to have these instructions. I've been recently asked by a junior DevOps engineer about adding pagination instructions (you can see them here: https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) which seemed like a very basic stuff for an api user, but it's better to have it than not to have it.
-- Refactor headings, renamed "basic installation" to "install datalore" - it seemed confusing after the section that go in-depth with the installation process, why basic? Directive heading are clearer
-- Kubernetes!
-- Chunky wording refactored to be more user friendly
-- "We" changed to "Datalore" - best practice in tech writing communication
-- incorrect info - after installing first user has super-admin rights, not admin
-- General note is that there's not enough lower-level headings. It's hard to navigate through the doc. Solution: add more headings and subheadings so the ToC is generated (see my docs)
+In this task I revised the [on-premises documentation](/datalore/task-1/) to make it clearer and easier to follow. I replaced complex phrases with simpler language and switched from using “we” to “Datalore” to keep the tone direct and clear For example: We duly notify our customers of new version releases so they can promptly upgrade [...] sounds better in this form:
 
- REMEMBER ABOUT MICROCOPY FEEDBACK, CHECK SCREENSHOTS
- */}
+:::note
+We’ll notify you as soon as we release ne version of Datalore, so you can upgrade your on-premise deployment without delay.
 
+As a rule, Docker deployments update faster and more easily than Kubernetes ones.
+:::
+
+I also added a table of contents that now shows subheadings up to the h4 level, which helps readers find information faster.
+
+In the installation overview, I've also replaced technical terms like `greenfield` to more accessible language, along with consistent use of elided forms (a a best practice in technical documentation). I've fixed a [deployment comparison table](/datalore/task-1/#set-up-infrastructure--choose-an-installation-method-) that has an empty third column. I've recoded it, clarified the descriptions, reformatted the hardware requirements, and added extra admonitionnotes. I've also moved The configuration steps to a reusable file and organized them into tabs. It felt like there were too many long tables in the document.
+
+For the Docker installation guide, I corrected broken links and made sure that external links open in a new tab. I replaced the heavily styled “Frames tiles” with a simpler layout using headings, paragraphs, and lists. When there are too many frames rendered in one view, it's quite hard Since the original instructions assumed a high level of familiarity with Docker or Kubernetes, I added basic steps—such as the exact command for composing the YAML file—and cleared up some of the jargon. I also fixed the references in the docker-compose.yaml file, inserted screenshots for steps like the allowlist configuration, and included instructions for testing the deployment locally. Additionally, I updated the user access information to note that the first user to log in receives super‑admin rights, and I renamed the “basic installation” section to “install datalore” to avoid confusion.
+
+### Task 1–changelog
+
+<details>
+    <summary>Proposed changes</summary>
+
+**General changes**
+- Refactored bulky wording for clarity
+- Replaced "we" with "Datalore"
+- Added a table of contents with subheadings up to h4
+
+**Installation Overview**
+- Replaced jargon with simpler terms
+- Fixed a broken table by recoding it, simplifying descriptions, and reformatting hardware requirements
+- Moved configuration steps to a reusable file and organized them into separate tabs for optional and required settings
+
+**Docker Installation**
+- Fixed broken links and ensured all have the `target="_blank"` attribute
+- Replaced styled frames with simple headings, paragraphs, and lists
+- Added basic command details for composing the YAML file and clarified instructions
+- Corrected YAML references in the `docker-compose.yaml` file
+- Added screenshots for allowlist configuration
+- Included instructions for testing the deployment locally
+- Updated user role information to indicate the first user gets super-admin rights
+- Renamed "basic installation" to "install datalore"
+
+</details>
+
+## Task 2–Manage users
+
+
+## Task 3–DuckDB
+
+Check the [task documentation](/) for details about my approach to the task and solution.

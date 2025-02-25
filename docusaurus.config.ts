@@ -72,7 +72,7 @@ const config: Config = {
       },
       items: [
         {
-          to: "/about/bio",
+          to: "https://tlabuk.github.io/this-cursive-page/about/bio",
           label: "About me",
           position: "left",
         },
@@ -80,11 +80,6 @@ const config: Config = {
           href: "https://github.com/tlabuk/datalore",
           className: "header-github-link",
           position: "right",
-        },
-        {
-          to: "/this-cursive-page/docs/odyssey-game",
-          label: "The Odyssey game",
-          position: "left",
         },
       ],
     },
