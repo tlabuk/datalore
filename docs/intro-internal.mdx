@@ -3,46 +3,34 @@ sidebar_position: 1
 draft: true
 ---
 
-# General information
-
-Tell what's what here, and what to expect from my solution. Tasks are split by folders.
-
-## First task - overview and feedback
-
-## Deployments
-
-My notes:
-- Broken links
-- Some of the links lack target=_blank attribute (not the best practice)
-- Frames: overkill, comparison table: bad formatting
-- The instructions themselves are okay but if and only if you're quite familiar with Docker or Kubernetes:
-    - There's a lot of jargon and not enough explanation
-    - The documentation skips some of the basic steps. For example: they start away directly with composing the yml file, but they don't tell the exact command how to do it. This should be much clearer
-    - The instruction also already presuppose you've prepared your deployment instance like EC2. They don't mention that you can check your deployment locally and see how it works. Again, it's basic stuff, but my experience shows that it's best to have these instructions. I've been recently asked by a junior DevOps engineer about adding pagination instructions (you can see them here: https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) which seemed like a very basic stuff for an api user, but it's better to have it than not to have it.
-- Kubernetes!
-- General note is that there's not enough lower-level headings. It's hard to navigate through the doc. Solution: add more headings and subheadings so the ToC is generated (see my docs)
-
-:::danger
-Highlight my changes with subheading links.
-:::
 
 
 
 
+{/*
+the introduction seemed incomplete
 
-{/* Actually, check after deploying Datalore locally, viewers apparently also have regular role types
+added screenshot after h1 with admin panel overview
 
-Add note under that viewers have NO ROLE TYPES, I'd add tooltip on UI
+the roles table is incomplete, in the sense that it misses the description of viewer capabilities - i update it
 
-Remember to make a ote about elided forms
+added introductoory sentence to the roles table - best practice in tech writing
+
+Add note under that viewers have NO ROLE TYPES, I'd add tooltip on UI, also added a screenshot for reference clarification
+
+Instructions how to accomplish something should be in ordered lists - again, best practice in tech writing
 
 Another thing: Search output is limited to 100 records. - is there any pagination?
 
-Also: rewrite with proper headings, it's hard to navigate through the doc
+You don't use "to finish the procedure" for easy steps, rather "to finish/complete
+added this screenshot and the caution admonition
 
-DISABLE/ENABLE: Change to activate/deactivate
 
-ELIDED forms!
+:::caution
+Changing type from viewer to user is irreversible.
+
+If you want to downgrade a specific user to viewer, you'll need to delete their account and add them again with a **Viewer** type.
+:::"
 
 Change user type: possible viewer - to user, but you can't downgrade it
 In the share notebook tab, it'd be good to grey out the options can edit and can manage if the notebook is shared with viewer

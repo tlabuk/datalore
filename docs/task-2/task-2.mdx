@@ -2,13 +2,233 @@
 id: manage-users
 title: Task 2–Manage users
 ---
+import Zoom from '/src/components/Zoom/ZoomImg';
+import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { AiOutlinePlus } from "react-icons/ai";
 
 # Manage users
 
+As an administrator, you can manage users through the Admin panel. To access it, click your avatar icon in the top-right corner of the interface and select Admin panel from the dropdown menu. From there, you can view, add, edit, and remove users, as well as manage their roles and permissions.
 
+This document provides an overview of the user management capabilities available in Datalore.
 
+<Zoom src="/datalore/img/manage-users/manage-users-1.png" alt="Admin panel overview" width="80%"/>
+
+## User types and roles <MajorUpdate/>
+
+Datalore supports different user types and roles, each with distinct permissions and access levels. The table below outlines these types, their capabilities, and the roles available to users.
 
 | **Type** | **Description** | **Capabilities / Roles** |
 |---|---|---|
 | **Viewer** | A **view-only** user type who can only access notebooks and reports shared with them. Viewers can't create new notebooks or publish reports. | **Capabilities:**<br/>- Can view shared notebooks and reports.<br/>- Cannot create, clone, or share notebooks or reports.<br/>- Sharing edit rights is disabled.<br/>- Cannot join groups with regular users.<br/>- file system view is the same as that of regular users. |
 | **User** | A user who can fully use the functionality of Datalore. Specific privileges vary based on the assigned role (check the Capabilities/Roles column on the right) | **There are three user roles available**:<br/>- **Regular:** A regular user who can create notebooks, workspaces and reports but has no admin rights<br/>- **Admin**: An admin user with access to the Admin panel<br/>- **Super Admin:** an admin user who can also change other users' roles via the Admin panel. First user registered with Datalore is automatically a super admin. |
+
+:::note
+Viewers don'tt have role types, as their access is strictly limited to viewing shared notebooks and reports without the ability to create, edit, or manage content.
+
+When you create a user with **viewer** type, you'll see that the dropdwon with roles is greyed out:
+
+<Zoom src="/datalore/img/manage-users/manage-users-2.png" alt="Viewer role dropdown" width="50%" />
+:::
+
+## Plans <MajorUpdate/>
+
+Datalore offers different types of plans to manage user access and resource allocation. Depending on your organization's setup, users may have a default personal plan, a non-default personal plan, or a group plan. The tabs below explain how each plan type works and how they interact.
+
+<Tabs queryString="plans" className="custom-tabs">
+  <TabItem value="default-personal-plan" label="Default Personal Plan">
+
+  A **default personal plan** is assigned to all users according to your Datalore configuration and marked as default when viewing the users.
+  It can later be changed for a non-default personal plan or group plan assigned from the **Admin panel** by a **super admin**.
+
+  </TabItem>
+
+  <TabItem value="non-default-personal-plan" label="Non-Default Personal Plan">
+
+  A **non-default personal plan** is assigned to an individual user from Datalore's UI (**Admin panel > Manage users**).
+  When assigned, it takes priority over any group plans that are already or will be associated with this user, until a different personal plan is assigned.
+
+  </TabItem>
+
+  <TabItem value="group-plans" label="Group Plans">
+
+  **Group plans** are assigned by super admins to all members when creating or editing a group from Datalore's UI (**Admin panel > Groups**).
+  This makes sense when the members of a group don'tt have personal plans assigned to them individually
+  and you want to select one plan that will work for all of them.
+
+  When a user is a member of several groups, the plan that is listed last in the plan configuration has priority over the other group plans associated with this user.
+  However, assigning a **personal plan** to a member of a group overrides any current or future group plan assignments for this user.
+
+  Managing group plans is described in **[Manage user groups](#manage-user-groups)**.
+
+  </TabItem>
+</Tabs>
+
+## Manage users
+
+### Access the manage users tab <MajorUpdate/>
+
+1. Click the avatar in the upper right corner of the screen and select Admin panel:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-3.png" alt="Viewer role dropdown" width="50%" />
+
+2. You'll be routed to the **Manage users** tab:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-1.png" alt="Admin panel overview" width="80%"/>
+
+:::tip
+The panel's sidebar is resizable. You can collapse or expand it using the icon in the upper-right corner or adjust its width by dragging the resize handle that appears when you hover over its right border.
+:::
+
+### View users
+
+- To sort the list of users by various categories, click the specific column header.
+
+- To search users by their IDs or emails or filter the list, use the search bar on top of the list.
+
+<Zoom src="/datalore/img/manage-users/manage-users-4.png" alt="Admin panel overview" width="80%"/>
+
+### Create users
+
+1. Go to **Admin panel > Manage users**.
+
+2. Click the <AiOutlinePlus size={25} style={{position: 'relative', top: '5px'}}/> icon next to the Manage users item on the Admin panel.
+
+3. New user dialog box opens:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-5.png" alt="Admin panel overview" width="40%"/>
+
+4. Enter new user's **full name**, **email**, and **password**.
+
+5. To assign the **Viewer** type to the new user, expand the list under User type and select Viewer.
+
+    <Zoom src="/datalore/img/manage-users/manage-users-6.png" alt="Admin panel overview" width="40%"/>
+
+6. To assign a role other than the default Regular, expand the list under User role and select the required role.
+
+     <Zoom src="/datalore/img/manage-users/manage-users-7.png" alt="Admin panel overview" width="40%"/>
+
+7. To deactivate onboarding tips for the new user, you can select the Skip onboarding checkbox (optional).
+
+8. Click the **Create user** button at the bottom.
+
+:::note
+You can create users directly in Datalore only if you logged in without Hub.
+
+If you logged in via Hub, user creation must be managed in Hub. Check the [official Hub documentation](https://www.jetbrains.com/help/hub/Creating-User-Accounts.html) for details.
+:::
+
+### Change user's type <MajorUpdate/>
+
+As a [super admin](#user-types-and-roles), you can change other users' types:
+
+1. Open the **Manage users** menu, find the user, and click the specific list item to open their profile.
+
+2. On the General tab, expand the **type** list.
+
+3. Select a different type from the expanded list:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-8.png" alt="Admin panel overview" width="40%"/>
+
+:::caution
+Changing type from viewer to user is irreversible.
+
+If you want to downgrade a specific user to viewer, you'll need to delete their account and add them again with a **Viewer** type.
+:::
+
+### Change user's role
+
+As a [super admin](#user-types-and-roles), you can also change other users' roles.
+
+1. Open the **Manage users** menu, find the user, and click the specific list item to open their profile.
+
+2. On the General tab, expand the role list.
+
+3. Select a different role from the expanded list:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-9.png" alt="Admin panel overview" width="40%"/>
+
+### Change user's plan﻿
+
+As a super admin user, you can manage plans for other users, including assigning a personal plan instead of the default one.
+
+:::tip
+In this context, a plan refers to the Datalore On-Premises parameter that defines resource limits for users. For more details on configuring plans, see [Docker plans](https://www.jetbrains.com/help/datalore/configure-plans-docker.html) and [Helm plans](https://www.jetbrains.com/help/datalore/configure-plans-helm-installation.html)
+:::
+
+1. Open the Manage Users menu, find the user as described in the procedure above, and click the respective list item to open their profile.
+
+2. In the user's profile, switch to the Resources tab.
+
+3. Under Plan, expand the list and select the required plan.
+
+4. Select the required plan from the list:
+
+<Zoom src="/datalore/img/manage-users/manage-users-10.png" alt="Admin panel overview" width="40%"/>
+
+:::caution
+The selected plan is assigned to the user and takes precedence over any associated group plans.
+:::
+
+### Manage user's computations
+
+1. Find the user and open their profile.
+
+2. Switch to the **Computations tab**.
+
+3. Sort the list of computations by clicking the specific column header.
+
+4. To stop a computation, click the ellipsis icon for the specific list item and select the **Stop** option that appears in the popup menu.
+
+5. To copy the notebook identifier of a specific computation, click the copy icon in the Notebook column for the respective computation.
+
+<Zoom src="/datalore/img/manage-users/manage-users-11.png" alt="Admin panel overview" width="60%"/>
+
+### Ban a user
+
+Banning users forbids them from any action in Datalore until unbanning, but their accounts stay in the system.
+
+:::danger
+After banning a user, you can't use their seat to register another account. The seat can be released only once the user is completely deleted.
+:::
+
+1. Find the user and open their detail view.
+
+2. Expand the Actions menu at the bottom of the user's profile and select **Ban user**.
+
+3. In the **Ban user** confirmation dialog, specify a reason for the action (optional) and click **OK**.
+
+4. To unban the user, expand the Actions menu and select **Unban user**.
+
+### Delete a user
+
+:::danger
+This action permanently deletes all data associated with this specific user, including all notebooks and their published versions. You cqn't recover deleted data.
+:::
+
+Delete a user when you want to create a viewer type user for an account already registered as a **user** type.
+
+1. Find the user and open their detail view.
+
+2. Expand the Actions menu at the bottom of the user's profile and select **Delete user**.
+
+3. Click **OK** in the Delete user confirmation dialog.
+
+
+### Disable user registration
+
+As an administrator, you can set up whether users can register themselves or not.
+
+1. Click the **Disable registrations** button at the top of the Manage users menu to ban users from registering themselves.
+
+2. To re-activate user registrations, click **Enable registrations**.
+
+## Managing and sharing resources with viewers
+
+Groups (mixing types allowed)
+Sharing notebooks with edit rights - not allowed
+Other stuff
+Also add the Ux overall
+
