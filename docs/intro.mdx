@@ -39,9 +39,13 @@ As a rule, Docker deployments update faster and more easily than Kubernetes ones
 
 I also added a table of contents that now shows subheadings up to the h4 level, which helps readers find information faster.
 
-In the installation overview, I've also replaced technical terms like `greenfield` to more accessible language, along with consistent use of elided forms (a a best practice in technical documentation). I've fixed a [deployment comparison table](/datalore/task-1/#set-up-infrastructure--choose-an-installation-method-) that has an empty third column. I've recoded it, clarified the descriptions, reformatted the hardware requirements, and added extra admonition notes. I've also moved The configuration steps to a reusable file and organized them into tabs. It felt like there were too many long tables in the document.
+In the [installation overview](/datalore/task-1/), I've also replaced technical terms like `greenfield` to more accessible language, along with consistent use of elided forms (a a best practice in technical documentation). I've fixed a [deployment comparison table](/datalore/task-1/#set-up-infrastructure--choose-an-installation-method-) that has an empty third column. I've recoded it, clarified the descriptions, reformatted the hardware requirements, and added extra admonition notes. I've also moved The configuration steps to a reusable file and organized them into tabs. It felt like there were too many long tables in the document.
 
-For the Docker installation guide, I corrected broken links and made sure that external links open in a new tab. I replaced the heavily styled “Frames tiles” with a simpler layout using headings, paragraphs, and lists. When there are too many frames rendered in one view, it's quite hard Since the original instructions assumed a high level of familiarity with Docker or Kubernetes, I added basic steps—such as the exact command for composing the YAML file—and cleared up some of the jargon. I also fixed the references in the docker-compose.yaml file, inserted screenshots for steps like the allowlist configuration, and included instructions for testing the deployment locally. Additionally, I updated the user access information to note that the first user to log in receives super‑admin rights, and I renamed the “basic installation” section to “install datalore” to avoid confusion.
+For the [Docker installation](/datalore/task-1/docker) guide, I corrected broken links and made sure that external links open in a new tab. I replaced the heavily styled “Frames tiles” with a simpler layout using headings, paragraphs, and lists. When there are too many frames rendered in one view, it's quite hard to focus on the text.
+
+The original instructions assumed a high level of familiarity with Docker, I added basic steps—such as the exact command for composing the YAML file. I also fixed the references to objects in the `docker-compose.yaml` file, inserted screenshots for steps like the allowlist configuration, and included instructions for testing the deployment locally.
+
+Additionally, I updated the user access information to note that the first user to log in receives super‑admin rights, and I renamed the “basic installation” section to “install datalore” to avoid confusion.
 
 ### Task 1–changelog
 
@@ -70,9 +74,14 @@ For the Docker installation guide, I corrected broken links and made sure that e
 
 </details>
 
+:::note disclaimer
+While I didn't work on Kubernetes instructions, as I wanted to focus on other tasks, similar changes could be applied to that section as well.
+:::
+
 ## Task 2–Manage users
 
+To be added.
 
 ## Task 3–DuckDB
 
-Check the [task documentation](/) for details about my approach to the task and solution.
+Check the [task solution overview](/datalore/task-3/) for details about my approach to the task and my solution.
