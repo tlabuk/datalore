@@ -7,6 +7,7 @@ import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { AiOutlinePlus } from "react-icons/ai";
+import { FaEllipsis } from "react-icons/fa6";
 
 # Manage users
 
@@ -92,7 +93,7 @@ The panel's sidebar is resizable. You can collapse or expand it using the icon i
 
 <Zoom src="/datalore/img/manage-users/manage-users-4.png" alt="Admin panel overview" width="80%"/>
 
-### Create users
+### Create users <MajorUpdate/>
 
 1. Go to **Admin panel > Manage users**.
 
@@ -176,17 +177,38 @@ The selected plan is assigned to the user and takes precedence over any associat
 
 ### Manage user's computations
 
-1. Find the user and open their profile.
+1. Find the user in your Admin panel's [user list](#view-users) and open their profile.
 
-2. Switch to the **Computations tab**.
+2. Go to the **Computations tab**.
 
 3. Sort the list of computations by clicking the specific column header.
 
-4. To stop a computation, click the ellipsis icon for the specific list item and select the **Stop** option that appears in the popup menu.
+4. To stop a computation, click the <FaEllipsis size={25} style={{position: 'relative', top: '5px'}}/> icon in the specific list item and select the **Stop** option that appears in the popup menu.
 
 5. To copy the notebook identifier of a specific computation, click the copy icon in the Notebook column for the respective computation.
 
 <Zoom src="/datalore/img/manage-users/manage-users-11.png" alt="Admin panel overview" width="60%"/>
+
+### Manage user's workspaces <MajorUpdate/>
+
+1. Find the user in your Admin panel's [user list](#view-users) and open their profile.
+
+2. Go to the **Workspaces** tab.
+
+3. To open one of the user's workspaces, click the <FaEllipsis size={25} style={{position: 'relative', top: '5px'}}/> icon in the specific list and select the **Open** option that appears in the popup menu.
+
+    <Zoom src="/datalore/img/manage-users/workspace-1.png" alt="Admin panel overview" width="60%"/>
+    :::tip
+    The link will take you to a new browser tab. As an admin, you can manage the workspace with edit rights.
+    :::
+
+4. To create a personal workspace for the user, follow these steps:
+
+    1. Expand the **Actions** menu at the bottom of the user's profile and select **Create workspace for user**.
+
+    <Zoom src="/datalore/img/manage-users/workspace-2.png" alt="Admin panel overview" width="60%"/>
+
+    2. In the **New workspace** dialog, provide a title for the new workspace and click **Create workspace**.
 
 ### Ban a user
 
@@ -227,7 +249,7 @@ As an administrator, you can set up whether users can register themselves or not
 
 2. To re-activate user registrations, click **Enable registrations**.
 
-## Managing and sharing resources with viewers
+## Managing and sharing resources with viewers <MajorUpdate/>
 
 As an administrator, you can manage and share Datalore resources with viewers. Viewers can only access notebooks and reports shared with them, without the ability to create, edit, or manage content. This means that:
 
