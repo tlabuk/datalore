@@ -8,7 +8,7 @@ import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate'
 
 Welcome to my solution of the Datalore documentation tasks!
 
-In this document you can find my feedback on the current state of the documents I've reworked. You'll also find a list of proposed changes, so you can easily pinpoint them in each solution document.
+In this document you can find my feedback on the current state of the documents I reworked. You'll also find a list of proposed changes, so you can easily pinpoint them in each solution document.
 
 ## What to expect?
 
@@ -18,9 +18,9 @@ The tasks are split by folders you can see in the main sidebar, each containing 
     - [Task 3–DuckDB](/datalore/task-3)
 
 :::info
-You'll notice that I've refactored the existing Datalore's documentation for **on-premises installation** and **managing users**.
+You'll notice that I refactored the existing Datalore's documentation for **on-premises installation** and **managing users**.
 
-Some updates are *subtle and minor* (such as formatting, elisions, wording, improved heading structure). Others are *more substantial*: wherever that's the case, I've added <MajorUpdate/> badges to the relevant sections for easy reference.
+Some updates are *subtle and minor* (such as formatting, elisions, wording, improved heading structure). Others are *more substantial*: wherever that's the case, I added <MajorUpdate/> badges to the relevant sections for easy reference.
 
 You can also check the relevant changelog sections in this document for the recap of changes for each rewritten documentation set.
 :::
@@ -29,7 +29,7 @@ You can also check the relevant changelog sections in this document for the reca
 
 ### Task 1–On-premises installation
 
-In this task I revised the [on-premises documentation](/datalore/task-1/) to make it clearer and easier to follow. I replaced complex phrases with simpler language and switched from using “we” to “Datalore” to keep the tone direct and clear For example: We duly notify our customers of new version releases so they can promptly upgrade [...] sounds better in this form:
+In this task I revised the [on-premises documentation](/datalore/task-1/). I **replaced complex phrases** with simpler language and switched from using “we” to “Datalore” to keep the tone direct and clear For example: "We duly notify our customers of new version releases so they can promptly upgrade" [...] sounds better in this form:
 
 :::note
 We’ll notify you as soon as we release ne version of Datalore, so you can upgrade your on-premise deployment without delay.
@@ -37,17 +37,17 @@ We’ll notify you as soon as we release ne version of Datalore, so you can upgr
 As a rule, Docker deployments update faster and more easily than Kubernetes ones.
 :::
 
-I also added a table of contents that now shows subheadings up to the `h4` level, which helps find information faster.
+I also included subheadings up to the `h4` level in the autho-generated table of contents, which helps find information faster.
 
-In the [installation overview](/datalore/task-1/), I've also replaced technical terms like `greenfield` to more accessible language, along with consistent use of elided forms (a a best practice in technical documentation). I've fixed a [deployment comparison table](/datalore/task-1/#set-up-infrastructure--choose-an-installation-method-) that has an empty third column. I've reworked it, clarified the descriptions, reformatted the hardware requirements, and added extra admonition notes. I've also moved The configuration steps to a reusable file and organized them into tabs. It felt like there were too many long tables in the document.
+In the [installation overview](/datalore/task-1/), I also **replaced technical jargon** like `greenfield` to more accessible language; I also used elided forms consistently (as a best practice in technical documentation). I fixed a [**deployment comparison table**](/datalore/task-1/#set-up-infrastructure--choose-an-installation-method-) that has an [empty third column](https://www.jetbrains.com/help/datalore/datalore-on-premises.html#installation-process-overview). I reworked it, **clarified the descriptions**, **reformatted the hardware requirements**, and added extra admonition notes. I also **moved the configuration steps to a reusable file** and organized them into tabs. It felt like there were too many long tables in the document.
 
-For the [Docker installation](/datalore/task-1/docker) guide, I corrected broken links and made sure that external links open in a new tab. I replaced the heavily styled “Frames tiles” with a simpler layout using headings, paragraphs, and lists. When there are too many frames rendered in one view, it's quite hard to focus on the text.
+For the [Docker installation](/datalore/task-1/docker) guide, I corrected **broken links** (such as `https://aws.amazon.com/getting-started/guides/deploy-webapp-ec2/`) and **made sure that external links open in a new tab**. I replaced the heavily styled “Frames tiles” with a **simpler layout** using headings, paragraphs, and lists. When there are too many frames rendered in one view, it's quite hard to focus on the text.
 
-The original instructions assumed a high level of familiarity with Docker, I added basic steps—such as the exact command for composing the YAML file. From my experience, it's best to put basic information in such documents, and assume that your readers might be "blank slates". You can find one such recent example in the [section](https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) I've recently added to the Nobl9 API documentation about using pagination prompted by a question asked by a user (junior engineer).
+The **original instructions assumed a high level of familiarity with Docker**, so I added basic steps—such as the exact command for composing the `YAML` file. From my experience, **it's best to put basic information in such documents**, and assume that **your readers might be "blank slates"**. You can find one such recent example in the [section](https://docs.nobl9.com/api/slo-v2#tag/SLO/paths/~1slos/get) I've recently added to the Nobl9 API documentation about using pagination prompted by a question asked by a user (junior engineer).
 
-I also fixed the references to objects in the `docker-compose.yaml` file, inserted screenshots for steps like the allowlist configuration, and included instructions for testing the deployment locally.
+I also **fixed the references to objects** in the `docker-compose.yaml` file, **inserted screenshots** for steps like the allowlist configuration.
 
-Additionally, I updated the user access information to note that the first user to log in receives super‑admin rights, and I renamed the “basic installation” section to “install datalore” to avoid confusion.
+Additionally, I **updated the user access information** to note that the first user to log in receives super‑admin rights (the [instruction here](https://www.jetbrains.com/help/datalore/install-datalore-on-premises-using-docker.html#-ov5yay_37) mentions only admin permissions), and I renamed the “basic installation” section to “install datalore” to avoid confusion.
 
 ### Task 1–changelog
 
@@ -84,8 +84,40 @@ Other parts of the documentation could also benefit from similar changes, while 
 
 ## Task 2–Manage users
 
-To be added.
+As part of this task, I  reviewed and improved the [Manage Users](https://www.jetbrains.com/help/datalore/manage-users.html#i7dhuxw_1) documentation based on an implementation ticket you provided. I tested the functionality in my local deployment of Datalore and, based on this experience, I made several improvements and additions to [existing documentation](/datalore/task-2/).
+
+The original **introduction felt incomplete**, so I added a concise summary of the document. To improve clarity, I also **added a screenshot of the admin panel** that provides some **visual overview**.
+
+The **roles table** was missing details on **Viewer capabilities**, which was relevant in the context of the ticket. I **updated it** and included an introductory sentence for better readability. Additionally, I **clarified that Viewers don't have role types** (I'd suggest adding a tooltip in the new user form which will show on hovering inactive dropdown with user roles while viewer type is selected). Additionally, I identified and **filled gaps in visual documentation** by adding missing screenshots wherever necessary.
+
+To improve clarity, I **reformatted step-by-step procedures into ordered lists** all over the document (following tech writing standards). I also **refined procedural phrasing**, replacing **"to finish the procedure"** with simply "Click the create button". Additionally, I added an **admonition** was added to highlight that **converting a Viewer to a User is irreversible**, requiring **deletion and re-creation** of the account if a downgrade is needed:
+
+In testing the implementation, I observed some UX inconsistencies or gaps not covered in the ticket you shared. While **changing a Viewer to a User was possible, downgrading back was not**. In the **Share Notebook** tab, the **"Can edit"** and **"Can manage"** options should ideally be **greyed out** when the notebook is shared with a Viewer. Additionally, I noticed that **groups can contain both Users and Viewers**, which contradicted the ticket’s description. To address these findings, I **added a dedicated section** on [sharing behavior with Viewers](/datalore/task-2/#managing-and-sharing-resources-with-viewers), to make sure the documentation **reflects actual user experience** rather than just the ticket’s assumptions.
+
+### Task 2 –changelog
+
+<details>
+    <summary>Proposed changes</summary>
+
+- Refined introduction into a one-sentence summary.
+- Added a screenshot of the admin panel for visual clarity.
+- Reformatted step-by-step procedures into ordered lists.
+- Improved procedural phrasing for clarity.
+- Updated roles table to include Viewer capabilities.
+- Clarified that Viewers don’t have role types.
+- Added an admonition about irreversible Viewer-to-User conversion.
+- Added missing screenshots for better visual documentation.
+- Created a dedicated section on sharing behavior with Viewers.
+- Noted that downgrading a User back to a Viewer is not possible.
+- Suggested greying out "Can edit" and "Can manage" for Viewers in Share Notebook.
+- Identified that groups can contain both Users and Viewers.
+
+</details>
 
 ## Task 3–DuckDB
 
 Check the [task solution overview](/datalore/task-3/) for details about my approach to the task and my solution.
+
+
+## Some feedback
+

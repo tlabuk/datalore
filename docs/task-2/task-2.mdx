@@ -10,7 +10,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 # Manage users
 
-As an administrator, you can manage users through the Admin panel. To access it, click your avatar icon in the top-right corner of the interface and select Admin panel from the dropdown menu. From there, you can view, add, edit, and remove users, as well as manage their roles and permissions.
+As an administrator, you can manage users through the **Admin panel**. To access the panel, click your avatar icon in the top-right corner of the interface and select **Admin panel** from the dropdown menu. From there, you can view, add, edit, and remove users, or manage their roles and permissions.
 
 This document provides an overview of the user management capabilities available in Datalore.
 
@@ -134,10 +134,10 @@ As a [super admin](#user-types-and-roles), you can change other users' types:
 
     <Zoom src="/datalore/img/manage-users/manage-users-8.png" alt="Admin panel overview" width="40%"/>
 
-:::caution
+:::caution changing can't be undone
 Changing type from viewer to user is irreversible.
 
-If you want to downgrade a specific user to viewer, you'll need to delete their account and add them again with a **Viewer** type.
+If you want to downgrade a specific user to viewer, you'll need to delete their account and add them again as a new user with a **Viewer** type.
 :::
 
 ### Change user's role
@@ -229,8 +229,12 @@ As an administrator, you can set up whether users can register themselves or not
 
 ## Managing and sharing resources with viewers
 
-Groups (mixing types allowed)
-Sharing notebooks with edit rights - not allowed
-Other stuff
-Also add the Ux overall
+As an administrator, you can manage and share Datalore resources with viewers. Viewers can only access notebooks and reports shared with them, without the ability to create, edit, or manage content. This means that:
+
+- Viewers can be part of groups that include other user types, but their access remains restricted to *viewing shared content*.
+- You can't share notebooks or other resources with edit rights to viewers. If you do so, Datalore will return the following error:
+
+    <Zoom src="/datalore/img/manage-users/manage-users-12.png" alt="Admin panel overview" width="40%"/>
+
+- The file system view for viewers is the same as that of regular users, but with restricted access.
 
