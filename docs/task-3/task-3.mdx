@@ -13,13 +13,13 @@ You can download the notebook from [here](../../assets/duckdb-notebook.zip) and 
 
 ## Notebook overview
 
-In this notebook, I combined markdown explanations with executable dataframe cells to demonstrate how DuckDB functions in some simplified data scenarios. I began by introducing DuckDB’s strengths as a resource-efficient, columnar analytical database that excels in handling various file formats—such as `CSV`, `JSON`, and `Parquet`.
+In this notebook, I combined markdown explanations with executable dataframe cells to demonstrate how DuckDB functions in some simplified data scenarios. I begin by introducing DuckDB’s strengths as a resource-efficient, columnar analytical database that excels in handling various file formats—such as `CSV`, `JSON`, and `Parquet`.
 
 Then, you'll find some hands-on examples to walk through some applications. Simple dataframe examples show how to read data on the fly with functions like `read_csv_auto` (**Read csv, JSON and parquet files on the fly** section), created tables, and executed queries that use more advanced SQL features.
 
 I also added a section to show how DuckDB’s aggregate and window functions can be used to compute summaries and rank data efficiently (**Query large data sets efficiently**, **Advanced analytics with window functions** and **Aggregate functions** sections).
 
-I also thought it might be a good idea to show DuckDB's functionality by querying DuckDB’s metadata (DuckDB Aggregate functions overview section). Here you'll a query that dynamically retrieves a list of aggregate functions starting with a specific letter, offering an insightful look into the engine’s functions set (just swap the `function_name LIKE 'a%'` part to any other letter and run the query again).
+I thought it might be a good idea to show DuckDB's functionality by querying DuckDB’s metadata (DuckDB Aggregate functions overview section). Here you'll a query that dynamically retrieves a list of aggregate functions starting with a specific letter, offering an insightful look into the engine’s functions set (just swap the `function_name LIKE 'a%'` part to any other letter and run the query again).
 
 In the end, I consolidated key DuckDB features into a Pandas DataFrame, summarizing each feature with its description and usage.
 
