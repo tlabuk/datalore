@@ -1,7 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import { FaLinkedin } from "react-icons/fa";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -106,10 +105,6 @@ const config: Config = {
         {
           title: "Other resources",
           items: [
-            {
-              label: "Ph.D. thesis",
-              href: "https://opus.us.edu.pl/info/phd/USLe9b9fbcfe5a44450af007b14af391dcf/",
-            },
             {
               label: "The Codex",
               href: "https://www.davincilabs.eu/downloads/The_Codex_Q2_2021.pdf",
