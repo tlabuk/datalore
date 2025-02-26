@@ -18,7 +18,7 @@ The tasks are split by folders you can see in the main sidebar, each containing 
     - [Task 2–Update documentation for the Viewer user-type](/datalore/task-2)
     - [Task 3–DuckDB](/datalore/task-3)
 
-You'll also notice [an additional section about some UX feedback](/datalore/#some-ux-feedback) I've gathered while working on the tasks. You can find it at the end of this document.
+You'll also notice [an additional small section about some UX feedback](/datalore/#ux-feedback) I've gathered while working on the tasks. You can find it at the end of this document.
 
 :::info
 You'll notice that I refactored the existing Datalore's documentation for **on-premises installation** and **managing users**.
@@ -61,6 +61,7 @@ Additionally, I **updated the user access information** to note that the first u
 - Refactored bulky wording for clarity
 - Replaced "we" with "Datalore"
 - Added a table of contents with subheadings up to h4
+- Added tags
 
 **Installation Overview**
 - Replaced jargon with simpler terms
@@ -102,18 +103,18 @@ In testing the implementation, I observed some UX inconsistencies or gaps not co
 <details>
     <summary>Proposed changes</summary>
 
-- Refined introduction into a one-sentence summary.
-- Added a screenshot of the admin panel for visual clarity.
-- Reformatted step-by-step procedures into ordered lists.
-- Improved procedural phrasing for clarity.
-- Updated roles table to include Viewer capabilities.
-- Clarified that Viewers don’t have role types.
-- Added an admonition about irreversible Viewer-to-User conversion.
-- Added missing screenshots for better visual documentation.
-- Created a dedicated section on sharing behavior with Viewers.
-- Noted that downgrading a User back to a Viewer is not possible.
-- Suggested greying out "Can edit" and "Can manage" for Viewers in Share Notebook.
-- Identified that groups can contain both Users and Viewers.
+- Refined introduction into a one-sentence summary
+- Added a screenshot of the admin panel for visual clarity
+- Reformatted step-by-step procedures into ordered lists
+- Improved procedural phrasing for clarity
+- Updated roles table to include Viewer capabilities
+- Clarified that Viewers don’t have role types
+- Added an admonition about irreversible Viewer-to-User change
+- Added missing screenshots for better visual documentation
+- Created a dedicated section on sharing behavior with Viewers
+- Noted that downgrading a User back to a Viewer isn't possible
+- Identified that groups can contain both Users and Viewers
+- Added tags
 
 </details>
 
@@ -121,17 +122,13 @@ In testing the implementation, I observed some UX inconsistencies or gaps not co
 
 Check the [task solution overview](/datalore/task-3/) for details about my approach to the task and my solution.
 
-Your text is already well-written, but I made a few minor grammar and clarity improvements:
-
----
-
-## Some UX Feedback
+## UX Feedback
 
 As I deployed Datalore and tested its features, I noticed some UX microcopy areas in the UI that could be improved, so I thought I'd share them with you.
 
 ### Sharing Notebooks with Viewers
 
-For example, when you share a notebook with a Viewer, the "Can edit" and "Can manage" options are still active, which might be confusing. It would be better to grey them out or provide a tooltip explaining why they are inactive. If you're an admin and you try to grant edit or manage permissions before clicking the `Send invitation` button, you see the following error:
+For example, when you share a notebook with a Viewer, the "Can edit" and "Can manage" options are still active, which might be confusing. It would be better to grey them out or provide a tooltip explaining why they are inactive . If you're an admin and you try to grant edit or manage permissions before clicking the `Send invitation` button, you see the following error:
 
 <Zoom src="/datalore/img/ux/ux-1.png" width="40%" alt="Error message when trying to grant edit or manage permissions to a Viewer"/>
 
