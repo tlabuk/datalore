@@ -3,6 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate'
+import Zoom from '/src/components/Zoom/ZoomImg'
 
 # General information
 
@@ -16,6 +17,8 @@ The tasks are split by folders you can see in the main sidebar, each containing 
     - [Task 1–On-premise installation](/datalore/task-1)
     - [Task 2–Update documentation for the Viewer user-type](/datalore/task-2)
     - [Task 3–DuckDB](/datalore/task-3)
+
+You'll also notice [an additional section about some UX feedback](/datalore/#some-ux-feedback) I've gathered while working on the tasks. You can find it at the end of this document.
 
 :::info
 You'll notice that I refactored the existing Datalore's documentation for **on-premises installation** and **managing users**.
@@ -118,8 +121,36 @@ In testing the implementation, I observed some UX inconsistencies or gaps not co
 
 Check the [task solution overview](/datalore/task-3/) for details about my approach to the task and my solution.
 
+Your text is already well-written, but I made a few minor grammar and clarity improvements:
 
-## Some UX feedback
+---
 
-As I deployed Datalore and tested the features, I noticed some UX microcopy areas in the UI that could be improved and I thought I'd share them with you.
+## Some UX Feedback
 
+As I deployed Datalore and tested its features, I noticed some UX microcopy areas in the UI that could be improved, so I thought I'd share them with you.
+
+### Sharing Notebooks with Viewers
+
+For example, when you share a notebook with a Viewer, the "Can edit" and "Can manage" options are still active, which might be confusing. It would be better to grey them out or provide a tooltip explaining why they are inactive. If you're an admin and you try to grant edit or manage permissions before clicking the `Send invitation` button, you see the following error:
+
+<Zoom src="/datalore/img/ux/ux-1.png" width="40%" alt="Error message when trying to grant edit or manage permissions to a Viewer"/>
+
+The HTTP code and path make it feel machine-like, so I'd rewrite it to something more human-friendly, such as: *"You can't grant edit or manage permissions to a Viewer. Select a User role or change the permission to view."*
+
+As a side note, I'd also align the capitalization in the form fields to `Can view` and `Can edit`.
+
+### Changing User Roles
+
+When you change a Viewer to a User, you see the following confirmation pop-up:
+
+<Zoom src="/datalore/img/ux/ux-2.png" width="40%" alt="Confirmation pop-up when changing a Viewer to a User"/>
+
+The message is clear, but the button text could better align with the action. Instead of `I'm sure`, I'd simply use `Change role` so users immediately understand what the button does.
+
+### Deleting Users
+
+When you delete a user, you see the following confirmation pop-up:
+
+<Zoom src="/datalore/img/ux/ux-3.png" width="40%" alt="Confirmation pop-up when deleting a user"/>
+
+This pop-up could be improved by rewording its title to **Delete user?**, which makes it clearer to admins that they are about to delete a user. The button text (`OK`) could also be changed to `Delete user` for clarity and consistency with other actions.
