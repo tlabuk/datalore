@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 slug: /
 ---
 import MajorUpdate from '/src/components/MajorUpdate/MajorUpdate'
@@ -52,7 +54,7 @@ I also **fixed the references to objects** in the `docker-compose.yaml` file, **
 
 Additionally, I **updated the user access information** to note that the first user to log in receives super‑admin rights (the [instruction here](https://www.jetbrains.com/help/datalore/install-datalore-on-premises-using-docker.html#-ov5yay_37) mentions only admin permissions), and I renamed the “basic installation” section to “install datalore” to avoid confusion.
 
-### Task 1–changelog
+#### Task 1–changelog
 
 <details>
     <summary>Proposed changes</summary>
@@ -86,7 +88,7 @@ While I didn't work on Kubernetes instructions, as I wanted to focus on other ta
 Other parts of the documentation could also benefit from similar changes, while documents such as the one on deploying Datalore on EC2 instance might require detailed refactoring that will include more detailed instructions for AWS configuration.
 :::
 
-## Task 2–Manage users
+### Task 2–Manage users
 
 As part of this task, I  reviewed and improved the [Manage Users](https://www.jetbrains.com/help/datalore/manage-users.html#i7dhuxw_1) documentation based on an implementation ticket you provided. I tested the functionality in my local deployment of Datalore and, based on this experience, I made several improvements and additions to [existing documentation](/datalore/task-2/).
 
@@ -98,7 +100,7 @@ To improve clarity, I **reformatted step-by-step procedures into ordered lists**
 
 In testing the implementation, I observed some UX inconsistencies or gaps not covered in the ticket you shared. While **changing a Viewer to a User was possible, downgrading back was not**. In the **Share Notebook** tab, the **"Can edit"** and **"Can manage"** options should ideally be **greyed out** when the notebook is shared with a Viewer. Additionally, I noticed that **groups can contain both Users and Viewers**, which contradicted the ticket’s description. To address these findings, I **added a dedicated section** on [sharing behavior with Viewers](/datalore/task-2/#managing-and-sharing-resources-with-viewers), to make sure the documentation **reflects actual user experience** rather than just the ticket’s assumptions.
 
-### Task 2 –changelog
+#### Task 2 –changelog
 
 <details>
     <summary>Proposed changes</summary>
@@ -118,7 +120,7 @@ In testing the implementation, I observed some UX inconsistencies or gaps not co
 
 </details>
 
-## Task 3–DuckDB
+### Task 3–DuckDB
 
 Check the [task solution overview](/datalore/task-3/) for details about my approach to the task and my solution.
 
